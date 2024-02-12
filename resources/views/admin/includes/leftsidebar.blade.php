@@ -2,13 +2,13 @@
 <div class="sl-sideleft">
   <div class="card">
     <div class="">
-        <div class="">
+        {{-- <div class="">
             <div class="text-center">
                 <img src="{{asset('/')}}admin/assets/img/img9.jpg" class="" alt="..." style="width:100px;border-radius:50%;height:100px;">
               </div>
             <h5>Name : Xavi</h5>
             <h5>Role</h5>
-        </div>
+        </div> --}}
     </div>
   </div>
 
