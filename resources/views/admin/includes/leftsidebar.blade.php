@@ -13,26 +13,18 @@
   </div>
 
   <div class="sl-sideleft-menu">
-    <a href="index.html" class="sl-menu-link active">
+    <a href="{{ route('deposit.index') }}" class="sl-menu-link ">
       <div class="sl-menu-item">
         <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
-        <span class="menu-item-label">Role With Permission</span>
+        <span class="menu-item-label">Deposit</span>
       </div>
     </a>
-     <a href="index.html" class="sl-menu-link ">
-        <div class="sl-menu-item">
-          <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
-          <span class="menu-item-label">User</span>
-        </div>
-      </a>
-      <a href="index.html" class="sl-menu-link ">
-        <div class="sl-menu-item">
-          <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
-          <span class="menu-item-label">Product</span>
-        </div>
-      </a>
-
-
+    <a href="{{ route('withdraw.index') }}" class="sl-menu-link ">
+      <div class="sl-menu-item">
+        <i class="menu-item-icon icon ion-ios-home-outline tx-22"></i>
+        <span class="menu-item-label">Withdraw</span>
+      </div>
+    </a>
   </div>
 
   <br>

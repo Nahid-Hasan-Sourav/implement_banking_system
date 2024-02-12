@@ -5,12 +5,15 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-
-
-   
+    {{-- ajax meta token start here --}}
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+    {{-- ajax meta token start here --}}
 
     <title>@yield('title')</title>
-
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11/dist/sweetalert2.min.css">
+    <!-- SweetAlert2 -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
    @include('admin.includes.style')
   </head>
 
@@ -37,7 +40,13 @@
             </a>
             <div class="dropdown-menu dropdown-menu-header wd-200">
               <ul class="list-unstyled user-profile-nav">
-                <li><a href=""><i class="icon ion-power"></i> Sign Out</a></li>
+                <li onclick="document.getElementById('logOutBtn').submit()">
+                  <a href="#"><i class="icon ion-power"></i> Sign Out</a>
+              </li>
+
+              <form action="{{ route('logout') }}" method="POST" id="logOutBtn">
+                  @csrf
+              </form>
               </ul>
             </div><!-- dropdown-menu -->
           </div><!-- dropdown -->
@@ -61,18 +70,7 @@
         @yield('body')
        </div>
 
-      </div><!-- sl-pagebody -->
-      {{-- <footer class="sl-footer">
-        <div class="footer-left">
-          <div class="mg-b-2">Copyright &copy; 2017. Starlight. All Rights Reserved.</div>
-          <div>Made by ThemePixels.</div>
-        </div>
-        <div class="footer-right d-flex align-items-center">
-          <span class="tx-uppercase mg-r-10">Share:</span>
-          <a target="_blank" class="pd-x-5" href="https://www.facebook.com/sharer/sharer.php?u=http%3A//themepixels.me/starlight"><i class="fa fa-facebook tx-20"></i></a>
-          <a target="_blank" class="pd-x-5" href="https://twitter.com/home?status=Starlight,%20your%20best%20choice%20for%20premium%20quality%20admin%20template%20from%20Bootstrap.%20Get%20it%20now%20at%20http%3A//themepixels.me/starlight"><i class="fa fa-twitter tx-20"></i></a>
-        </div>
-      </footer> --}}
+      </div>
     </div><!-- sl-mainpanel -->
     <!-- ########## END: MAIN PANEL ########## -->
 

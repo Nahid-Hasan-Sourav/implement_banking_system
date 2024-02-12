@@ -53,14 +53,6 @@
     <div class="login-wrapper wd-300 wd-xs-350 pd-25 pd-xs-40 bg-white">
         <div class="signin-logo tx-center tx-24 tx-bold tx-inverse">user <span class="tx-info tx-normal">login</span></div>
         
-        <div class="tx-center mg-b-60">
-                    @if(session('error'))
-                    <div class="alert alert-danger">
-                        {{ session('error') }}
-                    </div>
-                    @endif
-
-        </div>
         
         <form method="POST" action="{{ route('login') }}">
             @csrf
