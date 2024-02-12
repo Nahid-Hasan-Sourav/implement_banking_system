@@ -151,18 +151,19 @@ $("#withDrawMoneyBtn").click(function(){
         success: function (response) {
             console.log("submit form data == : ", response);
 
-            // if (response.status === "success") {
-            //     Swal.fire({
-            //         icon: 'success',
-            //         title: 'DEPOSIT',
-            //         text: 'The Deposit successfully added.',
-            //         timer: 5000,
-            //         showConfirmButton: true
-            //     });
-            //     $("#depositModal").modal('hide');
-            //     getAllDeposit();
+            if (response.status === "success") {
+                Swal.fire({
+                    icon: 'success',
+                    title: 'WITHDRAW',
+                    text: 'The WITHDRAW successfull.',
+                    timer: 5000,
+                    showConfirmButton: true
+                });
+                $("#withdrawModal").modal('hide');
 
-            // }
+                getAllWithDraw();
+
+            }
             if(response.status === "failed"){
                 
                 Swal.fire({

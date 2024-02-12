@@ -34,7 +34,7 @@
         <nav class="nav">
           <div class="dropdown">
             <a href="" class="nav-link nav-link-profile" data-toggle="dropdown">
-              <span class="logged-name">Jane<span class="hidden-md-down"> Doe</span></span>
+              <span class="logged-name">{{ Auth::user()->name }}</span></span>
               <img src="../img/img3.jpg" class="wd-32 rounded-circle" alt="">
               <img src="{{asset('/')}}admin/assets/img/img9.jpg" alt="..." class="wd-32 rounded-circle">
             </a>

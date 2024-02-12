@@ -40,7 +40,9 @@ class DepositController extends Controller
     }
     public function view(){
         $userData   =Auth::user();
-        $allDeposit =Transaction::where('user_id',$userData->id)->get();
+        $allDeposit =Transaction::where('user_id',$userData->id)
+        ->where('transaction_type','Deposit')
+        ->get();
         $allAmount =  $allDeposit->sum('amount');
 
         return response()->json([
