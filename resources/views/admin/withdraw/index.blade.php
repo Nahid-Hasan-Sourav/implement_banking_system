@@ -26,7 +26,7 @@
             <th scope="col">Date</th>
           </tr>
         </thead>
-        <tbody id="withdrawTBody">
+        <tbody id="withdrawTableBody">
           {{-- <tr>
             <th scope="row">1</th>
             <td>Mark</td>

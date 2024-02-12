@@ -34,6 +34,8 @@ Route::middleware('auth')->group(function () {
     Route::post('/deposit/store', [DepositController::class, 'store'])->name('deposit.store');
     Route::get('/all-deposit', [DepositController::class, 'view'])->name('deposit.view');
     Route::get('/withdraw', [WithdrawController::class, 'index'])->name('withdraw.index');
+    Route::post('/withdraw/store', [WithdrawController::class, 'store'])->name('withdraw.store');
+    Route::get('/all-withdraw', [WithdrawController::class, 'view'])->name('withdraw.view');
     
 
 
