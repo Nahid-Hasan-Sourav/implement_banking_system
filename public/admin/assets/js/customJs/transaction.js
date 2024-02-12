@@ -90,3 +90,46 @@ $("#withdrawOpenModalBtn").click(function(){
     $("#withdrawModal").modal('show');
     $("#withdrawMoneyInput").val('');
 });
+
+$("#withDrawMoneyBtn").click(function(){
+
+    let withdrawMoney = $("#withdrawMoneyInput").val();
+    // let transactionType = "Deposit";
+    // console.log("VALUE OF depositMoneyInput",depositMoney);
+
+    $.ajaxSetup({
+        headers: {
+            "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content"),
+        },
+    });
+   const data={
+    withdrawMoney,
+   }
+    $.ajax({
+        url: "/withdraw/store",
+        type: "POST",
+        data: data,
+        success: function (response) {
+            console.log("submit form data == : ", response);
+
+            // if (response.status === "success") {
+            //     Swal.fire({
+            //         icon: 'success',
+            //         title: 'DEPOSIT',
+            //         text: 'The Deposit successfully added.',
+            //         timer: 5000,
+            //         showConfirmButton: true
+            //     });
+            //     $("#depositModal").modal('hide');
+            //     getAllDeposit();
+
+            // }
+        },
+        error: function (xhr, status, error) {
+            console.log("Error: ", error);
+            var response = JSON.parse(xhr.responseText);
+            console.log("Error Message: ", response.message);
+        },
+    });
+
+})
