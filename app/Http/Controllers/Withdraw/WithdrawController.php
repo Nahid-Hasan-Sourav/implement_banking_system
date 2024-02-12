@@ -215,7 +215,9 @@ class WithdrawController extends Controller
 
     public function view(){
         $userData    =Auth::user();
-        $allWithdraw =Transaction::where('user_id',$userData->id)->get();
+        $allWithdraw =Transaction::where('user_id',$userData->id)
+        ->where('transaction_type','Withdraw')
+        ->get();
         $totalWithdrawBalance =  $allWithdraw->sum('amount');
 
         return response()->json([
